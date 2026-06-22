@@ -1,0 +1,48 @@
+
+
+자연어처리의 개요 Ph.D김정순| 원더솔루션즈AI연구개발부연구소장동의대
+
+Presentation Index Presentation Index 자연어처리의발전과정 01 자연어처리의주요Task 02 텍스트임베딩기법의진화 BoW(Bag-of-Word) TF-IDF Word2Vec 03 딥러닝기반언어모델과최신모델 Rule-based Statistical Deep Learning 04 Cross-lingual Hybrid Embedding MultimodelEmbedding CNN, LSTM Transformer BERT & GPT LLM(LLaMA, GPT-3, GPT-4 등) RLHF(인간피드백기반강화학습) Classification Generation Understanding
+
+자연어처리의 발전과정 History of Programming Language
+
+자연어처리의 발전 과정 01 자연어처리(NLP)란무엇인가?•자연어처리(NLP)는인간이일상적으로사용하는언어를컴퓨터가
+
+자연어처리의 발전 과정 01 규칙기반(Rule-based)통계기반(Statistical)딥러닝(Deep Learning)개요•사람이직접언어규칙·사전을컴
+
+자연어처리의 발전 과정 01 RNNLSTMSeq2Seq(NPS 2014)Attention(ICLR 2015)Transformer(NPS 2017)GPT-1GPT-3BERTChatGPTFla
+
+자연어처리의 주요 Task History of Programming Language NLP가 실제로 해결하는 현실세계의 문제들
+
+자연어처리의 발전 과정 02 Classification Generation Understanding분류
+
+텍스트 전처리와 토큰화 02 왜전처리(Pre-Processing)가필요한가? •컴퓨터는문자를직접이해하지못함→ 숫자(벡터)로변환필요 •전처리: 소문자화, 특수문자제거, 불용어(stopwords) 제거등토큰화(Tokenization)란? •문장을의미있는최소단위(토큰)로쪼개는작업 •단어단위: '나는밥을먹었다' → ['나는', '밥을', '먹었다'] •서브워드단위: 'unhappiness' → ['un', '##happi', '##ness'] (BERT 방식)최신트렌드: SubWord •BPE(Byte Pair Encoding), WordPiece 등 •미등록어(OOV) 문제해결—처음보는단어도처리가능 •GPT, BERT 등현대대형모델이모두사용
+
+텍스트 전처리와 토큰화 02 영어와다른한국어의특성•교착어: 조사·어미등형태소가단어에붙어의미를결정•'먹었다', '먹
+
+텍스트 임베딩 기법의 진화 History of Programming Language 단어를 숫자 벡터로 표현하는 방법
+
+텍스트 임베딩 기법의 진화 03 Text Embedding이란?•컴퓨터는글자를그대로이해하지못함→ 모든텍스트를‘숫자(Vector)’로변
+
+텍스트 임베딩 기법의 진화 03 전통통계방법Embedding신경망기반워드Embedding문맥기반Embedding•One-hot encoding•B 과거의 AI가 단어장에 적힌 뜻만 외우는 학생이었다면, 신경망 이후의 AI는 두 문장을 나란히 놓고(Comparison) 얼마나 비슷 (Similarity)핚지 느끼며 서로 다른 언어나 이미지를 하나로 연결(Alignment)하는 수준에 도달하였습니다.
+
+텍스트 임베딩 기법의 진화 03 전통통계방법Embedding신경망기반워드Embedding문맥기반Embedding•One-hot encoding•B •단어의빈도수만카운트 •전체어휘크기만큼의벡터생성 •각단어가등장한횟수를해당위치에기록→희소벡터(sparse vector)로표현 •주변단어들로중심단어예측 •'왕-남자+ 여자≈ 여왕' —단어간수학적연산가능 •단어고유의벡터하나만사용하는것이 •딥러닝기반의특징자동학습 •고차원벡터로표현하여컴퓨터가계산
+
+
+
+딥러닝 기반과 최신 언어 모델까지 History of Programming Language Transformer→GPT-4 →GPU Infra
+
+딥러닝 기반과 최신 언어 모델 04 딥러닝언어모델시계열데이터의정복Transformer 기반•MLP: 텍스트분류•단어임베딩학습: Word2Ve ChatGPT의 놀라운 성능은 Transformer라는 혁신적인 설계도와 GPU라는 강력핚 엔진이 만난 결과물 LLM의시
+
+딥러닝 기반 모델과 최신 언어 모델까지 04 딥러닝기반언어모델(MLP, CNN)의개요•MLP: 가장기초적인신경망으로텍스트분류의기반이됨
+
+딥러닝 기반 모델과 최신 언어 모델까지 04 기존딥러닝기반언어모델의문제점•단어를'순차적'으로처리→ 긴문장일수록앞정보소실•병 •크게Encoder와Decoder로구성•Multi-Head Attention: 여러관점에서동시에Atte •기계번역, 문맥의존적임베딩추출, 질의응답및기계독해, 문서요약, 문장분류및
+
+딥러닝 기반 모델과 최신 언어 모델까지 04 BERTGPTTransformer 기반•MLP: 텍스트분류•단어임베딩학습: Word2Vec•CNN: 문장내특정키워드패
+
+딥러닝 기반 모델과 최신 언어 모델까지 04 •왜GPU가필요한가?•Transformer의핵심= 대규모행렬곱연산•CPU: 소수의강력한코어
+
+딥러닝 기반 모델과 최신 언어 모델까지 04 GPU하드웨어비용동시1만명서비스A100 GPU 최소필요량 •80GB VRAM •326GB 모델 4장 A100 4장* 1,500만원전력+장소+하드웨어포함연간약4,000억원 월 334억 6천만원
+
+04 딥러닝 기반 모델과 최신 언어 모델까지 •GPT-3.5 대비향상점•훨씬넓은일반지식+ 강화된문
+
